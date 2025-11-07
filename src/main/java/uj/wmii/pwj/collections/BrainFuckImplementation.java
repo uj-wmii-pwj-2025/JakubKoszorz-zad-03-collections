@@ -47,8 +47,8 @@ public class BrainFuckImplementation implements Brainfuck {
                     throw new IllegalArgumentException("Unmatched ']' at position " + i);
                 }
                 int start = stack.pop();
-                Loop.put(start, i);  // '[' -> odpowiadający ']'
-                Loop.put(i, start);  // ']' -> odpowiadający '['
+                Loop.put(start, i);
+                Loop.put(i, start);
             }
         }
 
@@ -89,12 +89,12 @@ public class BrainFuckImplementation implements Brainfuck {
                         break;
                     case '[':
                         if (memory[pointer] == 0) {
-                            programCounter = Loop.get(programCounter); // Przeskocz do ]
+                            programCounter = Loop.get(programCounter);
                         }
                         break;
                     case ']':
                         if (memory[pointer] != 0) {
-                            programCounter = Loop.get(programCounter); // Przeskocz do [
+                            programCounter = Loop.get(programCounter);
                         }
                         break;
                 }
